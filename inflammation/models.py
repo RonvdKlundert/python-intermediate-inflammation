@@ -23,7 +23,7 @@ def load_csv(filename):
     np.array
         array of inflammation data
     """
-    return np.loadtxt(fname=filename, delimiter=',')
+    return np.loadtxt(fname=filename, delimiter=",")
 
 
 def daily_mean(data):
@@ -75,4 +75,3 @@ def daily_min(data):
 
     """
     return np.min(data, axis=0)
-
