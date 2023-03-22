@@ -8,10 +8,11 @@ and each column represents a single day across all patients.
 """
 
 import numpy as np
+from functools import reduce
 
-def dail_above_threshold(data, threshold, patient_num):
+def daily_above_threshold(data, threshold, patient_num):
     """Determine whether a patient's data exceeds a threshold.
-    using map and lambda functions
+    using map and lambda functions. Then get the count of days with reduce function
 
     Parameters
     ----------
@@ -28,7 +29,7 @@ def dail_above_threshold(data, threshold, patient_num):
         True if patient data exceeds threshold, False otherwise
     """
 
-    return list(map(lambda x: x > threshold, data[patient_num]))
+    return list(map(lambda x: x > threshold, data[patient_num])).count(True)
 
 
 def patient_normalise(data):
