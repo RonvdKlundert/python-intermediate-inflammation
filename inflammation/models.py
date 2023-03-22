@@ -9,6 +9,28 @@ and each column represents a single day across all patients.
 
 import numpy as np
 
+def dail_above_threshold(data, threshold, patient_num):
+    """Determine whether a patient's data exceeds a threshold.
+    using map and lambda functions
+
+    Parameters
+    ----------
+    data: np.array
+        Array of patient data
+    threshold: int
+        Threshold value
+    patient_num: int
+        Patient number
+
+    Returns
+    -------
+    bool
+        True if patient data exceeds threshold, False otherwise
+    """
+
+    return list(map(lambda x: x > threshold, data[patient_num]))
+
+
 def patient_normalise(data):
     """
     Normalise patient data from a 2D inflammation data array.
