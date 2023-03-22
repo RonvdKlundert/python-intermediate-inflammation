@@ -60,6 +60,22 @@ def daily_mean(data):
     """
     return np.mean(data, axis=0)
 
+def daily_std(data):
+    """Calculate the daily standard deviation of a 2D inflammation data array.
+
+    Parameters
+    ----------
+    data: float
+        2D array of inflammation data
+
+    Returns
+    -------
+    np.array
+        1D array of daily standard deviation inflammation values
+
+    """
+    return np.std(data, axis=0)
+
 
 def daily_max(data):
     """Calculate the daily max of a 2D inflammation data array.
