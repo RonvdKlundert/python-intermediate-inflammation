@@ -1,2 +1,5 @@
 matplotlib==3.7.1
 numpy==1.23.5
+pytest==7.1.2
+pytest-cov==3.0.0
+pylint==2.16.2
