@@ -21,9 +21,10 @@ def main(args):
     for filename in InFiles:
         inflammation_data = models.load_csv(filename)
 
-        view_data = {'average': models.daily_mean(inflammation_data), 'max': models.daily_max(inflammation_data), 'min': models.daily_min(inflammation_data)}
+        view_data = {'average': models.daily_mean(inflammation_data), 'std': models.daily_std(inflammation_data), 'max': models.daily_max(inflammation_data), 'min': models.daily_min(inflammation_data)}
 
         views.visualize(view_data)
+        print(models.daily_above_threshold(inflammation_data, -1, 1))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
